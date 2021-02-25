@@ -1,0 +1,14 @@
+[Unit]
+Description=ExoMy
+After=network.target
+Before=rc-local.service
+
+[Service]
+Environment="HOME=/root"
+WorkingDirectory=/root/ExoMy_Software/docker
+ExecStart=/root/ExoMy_Software/docker/run_exomy.sh -a
+Type=oneshot
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
